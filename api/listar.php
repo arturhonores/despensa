@@ -8,7 +8,7 @@ header('Content-Type: application/json');
 
 
 try {
-    $sql = "SELECT producto, cantidad, importancia FROM productos ORDER BY id DESC";
+    $sql = "SELECT id, producto, cantidad, importancia FROM productos ORDER BY id DESC";
     $result = $conn->query($sql);
     $productos = [];
     while ($row = $result->fetch_assoc()) {
@@ -19,5 +19,6 @@ try {
 
 } catch (Exception $e) {
     escribirEnLogs("Error al listar productos: " . $e->getMessage());
+    http_response_code(500);
     echo json_encode(['data' => []]);
 }
