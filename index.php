@@ -9,12 +9,11 @@
     <link rel="stylesheet" href="https://cdn.datatables.net/2.3.3/css/dataTables.dataTables.css"/>
     <script src="https://cdn.datatables.net/2.3.3/js/dataTables.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
-    <link rel="stylesheet" href="assets/style.css">
 </head>
 <body>
-<div class="container mx-auto p-6">
-    <h1 class="text-3xl font-bold mb-6 text-gray-800">La Despensa LVM</h1>
-    <div class="bg-white rounded-lg shadow-lg p-6">
+<div class="max-w-7xl mx-auto p-6">
+    <h1 class="text-3xl font-bold mb-6 text-gray-800 text-center">La Despensa LVM</h1>
+    <div class="bg-white rounded-lg md:shadow-lg p-1 md:p-6">
         <table id="myTable" class="display w-full">
             <thead>
             </thead>
@@ -91,8 +90,8 @@
                 },
                 columns: [
                     {data: "producto", title: "Producto"},
-                    {data: "cantidad", title: "Cantidad"},
-                    {data: "importancia", title: "Importancia"},
+                    {data: "cantidad", title: "Nº"},
+                    {data: "importancia", title: "Prio"},
                     {
                         data: null,
                         title: "Acciones",
