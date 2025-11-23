@@ -2,24 +2,31 @@
 require 'utils.php';
 require __DIR__ . '/vendor/autoload.php';
 
-//cargar variables de entorno
+// Cargar variables de entorno
 $dotenv = Dotenv\Dotenv::createImmutable(__DIR__);
 $dotenv->load();
 
 // Configuración de la base de datos
-$host = $_ENV['DB_HOST'];
-$username = $_ENV['DB_USERNAME'];
-$password = $_ENV['DB_PASSWORD'];
-$database = $_ENV['DB_DATABASE'];
+define('DB_HOST', $_ENV['DB_HOST']);
+define('DB_NAME', $_ENV['DB_DATABASE']);
+define('DB_USER', $_ENV['DB_USERNAME']);
+define('DB_PASS', $_ENV['DB_PASSWORD']);
 
-// Habilitar excepciones de mysqli
-mysqli_report(MYSQLI_REPORT_ERROR | MYSQLI_REPORT_STRICT);
-
-// Crear conexión
+// Crear conexión con PDO
 try {
-    $conn = new mysqli($host, $username, $password, $database);
-    $conn->set_charset("utf8mb4");
-//    escribirEnLogs("✅ ¡Conectado exitosamente a producción! 🔥");
-} catch (mysqli_sql_exception $e) {
-    die("Error de conexión: " . $e->getMessage());
+    $dsn = "mysql:host=" . DB_HOST . ";dbname=" . DB_NAME . ";charset=utf8mb4";
+
+    $conn = new PDO($dsn, DB_USER, DB_PASS, [
+        PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION,
+        PDO::ATTR_DEFAULT_FETCH_MODE => PDO::FETCH_ASSOC,
+        PDO::ATTR_EMULATE_PREPARES => true,  // ✅ Esto soluciona el bug
+        PDO::ATTR_STRINGIFY_FETCHES => false
+    ]);
+
+    // escribirEnLogs("✅ Conectado con PDO");
+
+} catch (PDOException $e) {
+    require_once __DIR__ . '/utils.php';
+    escribirEnLogs("❌ Error de conexión PDO: " . $e->getMessage());
+    die("Error de conexión a la base de datos");
 }

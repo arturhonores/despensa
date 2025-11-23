@@ -1,8 +1,7 @@
 <?php
 require_once '../config.php';
-require_once '../utils.php';
 
-/** @var mysqli $conn */
+/** @var PDO $conn */
 
 header('Content-Type: application/json');
 
@@ -16,23 +15,14 @@ try {
     $importancia = intval($_POST['importancia']);
     $producto = isset($_POST['producto']) ? $_POST['producto'] : 'N/A';
 
-    // Intentar con prepared statement
-    $stmt = $conn->prepare("UPDATE productos SET cantidad = ?, importancia = ? WHERE id = ?");
+    // PDO: prepare y execute en un solo paso
+    $sql = "UPDATE productos SET cantidad = ?, importancia = ? WHERE id = ?";
+    $stmt = $conn->prepare($sql);
+    $stmt->execute([$cantidad, $importancia, $id]);
 
-    if (!$stmt) {
-        throw new Exception("Error en prepare: " . $conn->error);
-    }
+    $affected = $stmt->rowCount();
 
-    $stmt->bind_param("iii", $cantidad, $importancia, $id);
-
-    if (!$stmt->execute()) {
-        throw new Exception("Error en execute: " . $stmt->error);
-    }
-
-    $affected = $stmt->affected_rows;
-    escribirEnLogs("✅ Producto actualizado (prepared): $producto (ID: $id)");
-
-    $stmt->close();
+    escribirEnLogs("✅ Producto actualizado (PDO): $producto (ID: $id) - Affected: $affected");
 
     echo json_encode([
         'success' => true,
@@ -41,7 +31,7 @@ try {
     ]);
 
 } catch (Exception $e) {
-    escribirEnLogs("❌ Error prepared statement: " . $e->getMessage());
+    escribirEnLogs("❌ Error PDO: " . $e->getMessage());
     http_response_code(500);
     echo json_encode([
         'success' => false,
