@@ -48,5 +48,3 @@ try {
         'message' => $e->getMessage()
     ]);
 }
-
-cerrarConexion();

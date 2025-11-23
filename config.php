@@ -23,11 +23,3 @@ try {
 } catch (mysqli_sql_exception $e) {
     die("Error de conexión: " . $e->getMessage());
 }
-
-// Función helper para cerrar la conexión (opcional, PHP lo hace automáticamente)
-function cerrarConexion() {
-    global $conn;
-    if ($conn) {
-        $conn->close();
-    }
-}
