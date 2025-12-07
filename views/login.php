@@ -1,11 +1,3 @@
-<?php
-
-session_start();
-if (isset($_SESSION['id'])) {
-    header('location:views/despensa.php');
-    exit;
-};
-?>
 
 <!doctype html>
 <html lang="es">
@@ -19,9 +11,9 @@ if (isset($_SESSION['id'])) {
 <body class="bg-gradient-to-r from-violet-600 to-indigo-600">
 <div class="max-w-7xl mx-auto p-6">
     <h1 class="text-center font-bold text-4xl text-white mb-10">La Despensa</h1>
-    <img src="assets/images/despensa.svg" class="w-100 h-100 mx-auto" alt="logo">
+    <img src="../assets/images/despensa.svg" class="w-100 h-100 mx-auto" alt="logo">
 
-    <form class="mt-10 max-w-md mx-auto space-y-6" method="post" action="controllers/auth/login-controller.php">
+    <form class="mt-10 max-w-md mx-auto space-y-6" method="post" action="../controllers/auth/login-controller.php">
         <div>
             <label for="email" class="block text-sm/6 font-medium text-white mb-2">Correo</label>
             <input id="email"
