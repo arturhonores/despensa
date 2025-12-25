@@ -14,35 +14,74 @@ if (isset($_SESSION['id'])) {
     <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=5.0, minimum-scale=1.0">
     <title>Login</title>
     <script src="https://code.jquery.com/jquery-4.0.0-rc.1.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <!-- Google Fonts - Manrope -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+    <link rel="stylesheet" href="assets/output.css">
 </head>
-<body class="bg-gradient-to-r from-violet-600 to-indigo-600">
-<div class="max-w-7xl mx-auto p-6">
-    <h1 class="text-center font-bold text-4xl text-white mb-10">La Despensa</h1>
-    <img src="assets/images/despensa.svg" class="w-100 h-100 mx-auto" alt="logo">
-
-    <form class="mt-10 max-w-md mx-auto space-y-6" method="post" action="controllers/auth/login-controller.php">
-        <div>
-            <label for="email" class="block text-sm/6 font-medium text-white mb-2">Correo</label>
-            <input id="email"
-                    type="email"
-                    name="email"
-                    autocomplete="email"
-                    required
-                    class="block w-full rounded-md bg-white px-3 py-1.5 text-base text-gray-900 outline-1 -outline-offset-1 outline-white/10 placeholder:text-gray-500 focus:outline-2 focus:-outline-offset-2 focus:outline-zinc-800 sm:text-sm/6"/>
+<body class="bg-background-light">
+<div class="max-w-3xl mx-auto p-6 flex flex-col gap-8 min-h-screen justify-center">
+    <div class="flex flex-col items-center gap-3">
+        <div class="flex h-12 w-12 items-center justify-center rounded-xl bg-primary shadow-lg shadow-primary/20 mb-2">
+            <span class="material-symbols-outlined text-3xl">kitchen</span>
         </div>
-
-        <div>
-            <label for="password" class="block text-sm/6 font-medium text-white mb-2">Contraseña</label>
-            <input id="password"
-                    type="password"
-                    name="password"
-                    autocomplete="current-password"
-                    required
-                    class="block w-full rounded-md bg-white px-3 py-1.5 text-base text-gray-900 outline-1 -outline-offset-1 outline-white/10 placeholder:text-gray-500 focus:outline-2 focus:-outline-offset-2 focus:outline-zinc-800 sm:text-sm/6"/>
+        <h1 class="text-2xl sm:text-3xl font-extrabold tracking-tight text-negro text-center">
+            Mi Despensa
+        </h1>
+        <div class="flex flex-col gap-1 text-center -mt-2">
+            <h2 class="text-xl font-bold text-[#111812]">
+                Hola de nuevo
+            </h2>
+            <p class="text-primary-oscuro text-sm font-medium">
+                Ingresa tus credenciales para acceder a tu despensa
+            </p>
         </div>
-        <button type="submit" class="w-full rounded-md bg-white px-3 py-2 mt-6 text-sm font-semibold text-indigo-600 shadow-sm hover:bg-indigo-50 transition-colors">
-            Iniciar sesión
+    </div>
+    <form class="flex flex-col gap-5" method="post" action="controllers/auth/login-controller.php">
+        <label for="email" class="flex flex-col gap-2"> <span class="text-negro text-sm font-semibold leading-normal">Correo Electrónico</span>
+            <div class="relative flex w-full items-center">
+                <input class="w-full rounded-lg border border-[#dbe6dd] bg-white px-4 py-3.5 text-base text-negro placeholder:text-[#618968] focus:border-primary focus:ring-1 focus:ring-primary outline-none transition-all"
+                        placeholder="ejemplo@correo.com"
+                        id="email"
+                        type="email"
+                        name="email"
+                        autocomplete="email"
+                        required
+                />
+                <div class="absolute right-4 text-[#618968]">
+                    <span class="material-symbols-outlined text-[20px] hover:text-negro">mail</span>
+                </div>
+            </div>
+        </label> <label for="password" class="flex flex-col gap-2">
+            <div class="flex justify-between items-center">
+                <span class="text-negro text-sm font-semibold leading-normal">Contraseña</span>
+            </div>
+            <div class="relative flex w-full items-center">
+                <input class="w-full rounded-lg border border-[#dbe6dd]  bg-white px-4 py-3.5 text-base text-negro placeholder:text-[#618968] focus:border-primary focus:ring-1 focus:ring-primary outline-none transition-all pr-12"
+                        placeholder="Ingresa tu contraseña"
+                        type="password"
+                        name="password"
+                        autocomplete="current-password"
+                        required
+                />
+                <button class="absolute right-0 top-0 bottom-0 px-4 flex items-center justify-center text-[#618968] hover:text-negro transition-colors"
+                        type="button">
+                    <span class="material-symbols-outlined text-[20px]">visibility</span>
+                </button>
+            </div>
+        </label>
+        <div class="flex justify-end">
+            <a class="text-sm font-semibold text-negro hover:text-primary transition-colors" href="#">
+                ¿Olvidaste tu contraseña?
+            </a>
+        </div>
+        <button type="submit"
+                class="group flex w-full items-center justify-center gap-2 rounded-lg bg-primary py-3.5 px-6 text-[#102213] transition-all hover:bg-[#0fd630] active:scale-[0.98] shadow-md shadow-primary/20"
+                type="submit">
+            <span class="text-base font-bold tracking-wide">Iniciar Sesión</span>
+            <span class="material-symbols-outlined text-lg transition-transform group-hover:translate-x-1">login</span>
         </button>
     </form>
 

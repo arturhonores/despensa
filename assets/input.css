@@ -1,0 +1,23 @@
+@import "tailwindcss";
+
+/* Configuración del tema en Tailwind v4 */
+@theme {
+    /* Colores personalizados */
+    --color-primary: #13ec37;
+    --background-light: #f6f8f6;
+    --color-negro: #111812;
+    --color-primary-oscuro: #618968;
+
+    /* Fuente personalizada */
+    --font-family-display: Manrope, sans-serif;
+
+    /* Border radius personalizado */
+    --radius: 0.25rem;
+    --radius-lg: 0.5rem;
+    --radius-xl: 0.75rem;
+    --radius-full: 9999px;
+}
+
+.material-symbols-outlined {
+    font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+}
