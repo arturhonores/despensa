@@ -22,7 +22,7 @@ if (isset($_SESSION['id'])) {
     <link rel="stylesheet" href="assets/output.css">
 </head>
 <body class="bg-background-light">
-<div class="max-w-3xl mx-auto p-6 flex flex-col gap-8 min-h-screen justify-center">
+<div class="max-w-3xl mx-auto p-6 flex flex-col gap-8 min-h-dvh justify-center">
     <div class="flex flex-col items-center gap-3">
         <div class="flex h-12 w-12 items-center justify-center rounded-xl bg-primary shadow-lg shadow-primary/20 mb-2">
             <span class="material-symbols-outlined text-3xl">kitchen</span>
