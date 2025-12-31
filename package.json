@@ -1,4 +1,8 @@
 {
+  "scripts": {
+    "dev": "npx @tailwindcss/cli -i ./assets/input.css -o ./assets/output.css --watch",
+    "build": "npx @tailwindcss/cli -i ./assets/input.css -o ./assets/output.css --minify"
+  },
   "dependencies": {
     "@tailwindcss/cli": "^4.1.18",
     "tailwindcss": "^4.1.18"
