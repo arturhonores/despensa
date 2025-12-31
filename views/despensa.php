@@ -16,7 +16,8 @@ if (!isset($_SESSION['id'])){
     <script src="https://code.jquery.com/jquery-4.0.0-rc.1.min.js"></script>
     <link rel="stylesheet" href="https://cdn.datatables.net/2.3.3/css/dataTables.dataTables.css"/>
     <script src="https://cdn.datatables.net/2.3.3/js/dataTables.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <link rel="stylesheet" href="../assets/output.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&icon_names=edit" />
 </head>
 <body>
 <div class="max-w-7xl mx-auto p-6">
@@ -45,20 +46,20 @@ if (!isset($_SESSION['id'])){
             <div class="mb-4">
                 <label class="block text-gray-700 font-semibold mb-2">Producto</label>
                 <input type="text" id="edit_producto" name="producto"
-                        class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
+                        class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary"
                         readonly>
             </div>
 
             <div class="mb-4">
                 <label class="block text-gray-700 font-semibold mb-2">Cantidad</label>
                 <input type="number" id="edit_cantidad" name="cantidad"
-                        class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
+                        class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary"
                         required min="0">
             </div>
 
             <div class="mb-4">
                 <label class="block text-gray-700 font-semibold mb-2">Importancia</label> <select id="edit_importancia" name="importancia"
-                        class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
+                        class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary"
                         required>
                     <option value="1">Baja (1)</option>
                     <option value="2">Media (2)</option>
@@ -68,7 +69,7 @@ if (!isset($_SESSION['id'])){
 
             <div class="flex gap-3">
                 <button type="submit"
-                        class="flex-1 bg-blue-500 hover:bg-blue-600 text-white font-semibold py-2 px-4 rounded-lg transition">
+                        class="flex-1 bg-primary hover:bg-primary-hover text-white font-semibold py-2 px-4 rounded-lg transition">
                     Guardar
                 </button>
                 <button type="button" id="cancelModal"
@@ -105,11 +106,11 @@ if (!isset($_SESSION['id'])){
                         title: "Acciones",
                         orderable: false,
                         render: function (data, type, row) {
-                            return `<button class="btn-editar bg-blue-500 hover:bg-blue-600 text-white px-4 py-2 rounded-lg transition"
+                            return `<button class="btn-editar bg-primary hover:bg-primary-hover text-white px-4 py-2 rounded-lg transition"
                                         data-id="${row.id}"
                                         data-producto="${row.producto}"
                                         data-cantidad="${row.cantidad}"
-                                        data-importancia="${row.importancia}">Editar
+                                        data-importancia="${row.importancia}"><span class="material-symbols-outlined text-xl">edit</span>
                                 </button>`;
                         }
                     }
