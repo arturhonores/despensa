@@ -1,6 +1,6 @@
 <?php
 session_start();
-if (!isset($_SESSION['id'])){
+if (!isset($_SESSION['id'])) {
     header('location:../index.php');
     exit;
 }
@@ -16,8 +16,8 @@ if (!isset($_SESSION['id'])){
     <script src="https://code.jquery.com/jquery-4.0.0-rc.1.min.js"></script>
     <link rel="stylesheet" href="https://cdn.datatables.net/2.3.3/css/dataTables.dataTables.css"/>
     <script src="https://cdn.datatables.net/2.3.3/js/dataTables.js"></script>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&icon_names=edit"/>
     <link rel="stylesheet" href="../assets/output.css">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&icon_names=edit" />
 </head>
 <body>
 <div class="max-w-7xl mx-auto p-6">
@@ -99,14 +99,37 @@ if (!isset($_SESSION['id'])){
                 },
                 columns: [
                     {data: "producto", title: "Producto"},
-                    {data: "cantidad", title: "Nº"},
-                    {data: "importancia", title: "Prio"},
+                    {
+                        data: "cantidad",
+                        title: "Nº",
+                        className: "dt-center",
+                        render: function (data, type, row) {
+                            if (data === 0) {
+                               return `<span class="text-red-500">${data}</span>`
+                            }
+                            return data;
+                        }
+                    },
+                    {
+                        data: "importancia",
+                        title: "Prio",
+                        className: "dt-center",
+                        render: function (data, type, row) {
+                            const prioridad = {
+                                1: 'Baja',
+                                2: 'Media',
+                                3: 'Alta'
+                            };
+                            return prioridad[data] || data;
+                        }
+                    },
                     {
                         data: null,
-                        title: "Acciones",
+                        title: "Editar",
                         orderable: false,
+                        className: "dt-center",
                         render: function (data, type, row) {
-                            return `<button class="btn-editar bg-primary hover:bg-primary-hover text-white px-4 py-2 rounded-lg transition"
+                            return `<button class="btn-editar bg-primary hover:bg-primary-hover text-white px-2 py-2 rounded-lg transition inline-flex items-center justify-center"
                                         data-id="${row.id}"
                                         data-producto="${row.producto}"
                                         data-cantidad="${row.cantidad}"
