@@ -31,7 +31,7 @@ if (isset($_SESSION['id'])) {
             Mi Despensa
         </h1>
         <div class="flex flex-col gap-1 text-center -mt-2">
-            <h2 class="text-xl font-bold text-[#111812]">
+            <h2 class="text-xl font-bold text-negro">
                 Hola de nuevo
             </h2>
             <p class="text-primary-oscuro text-sm font-medium">

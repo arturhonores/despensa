@@ -11,10 +11,14 @@ if (!isset($_SESSION['id'])) {
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=5.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Despensa</title>
+    <title>dashboard</title>
+    <!--jquery-->
     <script src="https://code.jquery.com/jquery-4.0.0-rc.1.min.js"></script>
+    <!--Datatables-->
     <link rel="stylesheet" href="https://cdn.datatables.net/2.3.3/css/dataTables.dataTables.css"/>
     <script src="https://cdn.datatables.net/2.3.3/js/dataTables.js"></script>
+    <!--otros scripts-->
+    <script src="../assets/js/navbar.js"></script>
     <script src="../assets/js/dashboard.js"></script>
     <link rel="stylesheet"
             href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200"/>
