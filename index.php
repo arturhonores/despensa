@@ -2,7 +2,7 @@
 
 session_start();
 if (isset($_SESSION['id'])) {
-    header('location:views/despensa.php');
+    header('location:views/dashboard.php');
     exit;
 };
 ?>

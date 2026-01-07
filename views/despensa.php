@@ -4,7 +4,6 @@ if (!isset($_SESSION['id'])) {
     header('location:../index.php');
     exit;
 }
-
 ?>
 <!doctype html>
 <html lang="es">
@@ -21,7 +20,10 @@ if (!isset($_SESSION['id'])) {
 </head>
 <body>
 <div class="max-w-7xl mx-auto p-6">
-    <h1 class="text-3xl font-bold mb-6 text-gray-800 text-center">La Despensa LVM</h1>
+    <?php
+    include_once "components/navbar.php";
+    ?>
+    <h1 class="text-3xl font-bold mb-6 text-gray-800 text-center">Stock</h1>
     <div class="bg-white rounded-lg md:shadow-lg p-1 md:p-6">
         <table id="myTable" class="display w-full">
             <thead>
