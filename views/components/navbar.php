@@ -11,7 +11,7 @@
             <span class="material-symbols-outlined">close</span>
         </button>
         <div class="flex items-center gap-3">
-            <img src="../../assets/images/account_circle_24dp_E3E3E3_FILL0_wght400_GRAD0_opsz24.svg" class="w-12 h-12 rounded-full">
+            <img src="/assets/images/account_circle_24dp_E3E3E3_FILL0_wght400_GRAD0_opsz24.svg" class="w-12 h-12 rounded-full">
             <div>
                 <h3 class="font-semibold">Hola</h3>
                 <p class="text-sm text-gray-600">Familia Honores Agapito</p>
@@ -29,7 +29,7 @@
         </ul>
     </nav>
     <!-- 3. FOOTER-->
-    <form class="p-4 border-t border-gray-200 w-full self-end" method="post" action="../../controllers/auth/logout-controller.php">
+    <form class="p-4 border-t border-gray-200 w-full self-end" method="post" action="/controllers/auth/logout-controller.php">
         <button class="w-full text-red-500 flex justify-center items-center gap-2">
             <span class="material-symbols-outlined">logout</span> Cerrar Sesión
         </button>
