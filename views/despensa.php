@@ -28,7 +28,7 @@ if (!isset($_SESSION['id'])) {
     <?php
     include_once "components/navbar.php";
     ?>
-    <h1 class="text-3xl font-bold mb-6 text-gray-800 text-center">Stock</h1>
+    <h1 class="text-3xl font-bold my-6 text-gray-800 text-center">Stock</h1>
     <div class="bg-white rounded-lg md:shadow-lg p-1 md:p-6">
         <table id="myTable" class="display w-full">
             <thead>

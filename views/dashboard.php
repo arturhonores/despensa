@@ -29,7 +29,7 @@ if (!isset($_SESSION['id'])) {
     <?php
     include_once "components/navbar.php";
     ?>
-    <h1 class="text-3xl font-bold mb-6 text-gray-800 text-left">Hola, Familia</h1>
+    <h1 class="text-3xl font-bold my-6 text-gray-800 text-left">Hola, Familia</h1>
     <p class="text-primary-oscuro mb-3">Aquí tienes el estado actual de tu despensa</p>
     <!-- Stats Grid -->
     <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 mb-8">
