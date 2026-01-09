@@ -41,7 +41,7 @@ try {
     $stmtUltimoacceso = $conn->prepare($sqlUltimoacceso);
     $stmtUltimoacceso->execute([$usuario['id']]);
 
-    header('location:../../views/despensa.php');
+    header('location:../../views/dashboard.php');
     exit;
 
 
