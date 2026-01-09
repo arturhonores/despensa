@@ -2,7 +2,7 @@
 
 session_start();
 if (isset($_SESSION['id'])) {
-    header('location:views/dashboard.php');
+    header('Location: /views/dashboard.php');
     exit;
 };
 ?>
