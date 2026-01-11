@@ -5,7 +5,8 @@ require __DIR__ . '/vendor/autoload.php';
 // Cargar variables de entorno
 $dotenv = Dotenv\Dotenv::createImmutable(__DIR__);
 $dotenv->load();
-
+//configuración para incluir subdirectorio del proyecto
+define('BASE_PATH', $_ENV['BASE_PATH'] ?? '');
 // Configuración de la base de datos
 define('DB_HOST', $_ENV['DB_HOST']);
 define('DB_NAME', $_ENV['DB_DATABASE']);

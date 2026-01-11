@@ -11,7 +11,7 @@
             <span class="material-symbols-outlined">close</span>
         </button>
         <div class="flex items-center gap-3">
-            <img src="/assets/images/avatar.svg" class="w-12 h-12 rounded-full">
+            <img src="<?=BASE_PATH?>/assets/images/avatar.svg" class="w-12 h-12 rounded-full">
             <div>
                 <h3 class="font-semibold">Hola</h3>
                 <p class="text-sm text-gray-600">Familia Honores Agapito</p>
@@ -22,17 +22,17 @@
     <nav class="flex-1 overflow-y-auto p-4">
         <ul class="space-y-4">
             <li>
-                <a href="/views/stock.php">Stock</a>
+                <a href=<?=BASE_PATH?>"/views/stock.php">Stock</a>
             </li>
             <li>Lista de la compra</li>
             <li>
-                <a href="/views/dashboard.php">Dashboard</a>
+                <a href="<?=BASE_PATH?>/views/dashboard.php">Dashboard</a>
             </li>
         </ul>
     </nav>
     <!-- 3. FOOTER-->
     <form class="p-4 border-t border-gray-200 w-full self-end" method="post" action="/controllers/auth/logout-controller.php">
-        <button class="w-full text-red-500 flex justify-center items-center gap-2">
+        <button class="w-full text-red-500 flex justify-center items-center gap-2 cursor-pointer">
             <span class="material-symbols-outlined">logout</span> Cerrar Sesión
         </button>
     </form>
