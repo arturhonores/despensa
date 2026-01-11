@@ -11,7 +11,7 @@
             <span class="material-symbols-outlined">close</span>
         </button>
         <div class="flex items-center gap-3">
-            <img src="/assets/images/account_circle_24dp_E3E3E3_FILL0_wght400_GRAD0_opsz24.svg" class="w-12 h-12 rounded-full">
+            <img src="/assets/images/avatar.svg" class="w-12 h-12 rounded-full">
             <div>
                 <h3 class="font-semibold">Hola</h3>
                 <p class="text-sm text-gray-600">Familia Honores Agapito</p>
@@ -21,7 +21,9 @@
     <!-- 2. MENÚ PRINCIPAL (crece para ocupar espacio disponible) -->
     <nav class="flex-1 overflow-y-auto p-4">
         <ul class="space-y-4">
-            <li>Stock</li>
+            <li>
+                <a href="/views/stock.php">Stock</a>
+            </li>
             <li>Lista de la compra</li>
             <li>
                 <a href="/views/dashboard.php">Dashboard</a>
