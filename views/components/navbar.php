@@ -22,7 +22,7 @@
     <nav class="flex-1 overflow-y-auto p-4">
         <ul class="space-y-4">
             <li>
-                <a href=<?=BASE_PATH?>/views/stock.php">Stock</a>
+                <a href="<?=BASE_PATH?>/views/stock.php">Stock</a>
             </li>
             <li>Lista de la compra</li>
             <li>
