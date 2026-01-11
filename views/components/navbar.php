@@ -22,7 +22,7 @@
     <nav class="flex-1 overflow-y-auto p-4">
         <ul class="space-y-4">
             <li>
-                <a href=<?=BASE_PATH?>"/views/stock.php">Stock</a>
+                <a href=<?=BASE_PATH?>/views/stock.php">Stock</a>
             </li>
             <li>Lista de la compra</li>
             <li>
@@ -31,7 +31,7 @@
         </ul>
     </nav>
     <!-- 3. FOOTER-->
-    <form class="p-4 border-t border-gray-200 w-full self-end" method="post" action="/controllers/auth/logout-controller.php">
+    <form class="p-4 border-t border-gray-200 w-full self-end" method="post" action="<?=BASE_PATH?>/controllers/auth/logout-controller.php">
         <button class="w-full text-red-500 flex justify-center items-center gap-2 cursor-pointer">
             <span class="material-symbols-outlined">logout</span> Cerrar Sesión
         </button>
